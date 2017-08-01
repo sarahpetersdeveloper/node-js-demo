@@ -74,7 +74,14 @@ navigation">
     let xhr = new XMLHttpRequest();
     xhr.open("GET", "/weather.json");
     xhr.onload = function(){
-      console.log(xhr.responseText);
+      let myWeatherJSON = JSON.parse(xhr.responseText);
+      let temp = myWeatherJSON.currentWeather.temperature;
+
+      let myP = document.createElement("p");
+      myP.textContent = temp;
+
+      let weatherdiv = document.querySelector("#weather");
+      weatherdiv.append(myP);
     };
     xhr.send();
   })();
