@@ -78,7 +78,7 @@ navigation">
       let temp = myWeatherJSON.currentWeather.temperature;
 
       let myP = document.createElement("p");
-      myP.textContent = temp;
+      myP.textContent = "The teamperature for your location is " + temp;
 
       let weatherdiv = document.querySelector("#weather");
       weatherdiv.append(myP);
